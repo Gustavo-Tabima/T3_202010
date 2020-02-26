@@ -155,8 +155,10 @@ public class Modelo <Z extends Comparable>{
 
 
 
-	public void shellsort(Comparable datosEntrada[]){
-
+	public String shellsort(Comparable datosEntrada[]){
+		
+		
+		start = System.currentTimeMillis();
 		int tamanoCortar = datosEntrada.length;
 		int h = 1;
 		while (h < tamanoCortar/3) h = 3*h + 1;
@@ -169,20 +171,63 @@ public class Modelo <Z extends Comparable>{
 			}
 			h = h/3;
 		}
+		
 
+		String[] Respuesta = new String [20];
+		for(int i = 0; i < datosEntrada.length;i++){
+			
+			if(i<10){
+				Respuesta[i] = datosEntrada[i].toString() ;
+			}
+		}
+		finish = System.currentTimeMillis();
+		int z = 0;
+		
+		while(z<19){
+			return Respuesta[z];
+		};
+		return "el tiempo fue:  " + (finish - start)/1000 + "SEGUNDOS";
+			
 	}
 
-	private static boolean menos(Comparable v, Comparable w)
+	
+	public static void merge(Comparable[] 1, ){
+		
+	}
+	
+	public String mergeSort(Comparable<Comparendo>[] entrada,Comparable<Comparendo>[] entradaAux,int bajo, int mitad, int alto){
+	
+		
+		
+		 for (int k = bajo; k <= alto; k++)
+			 entradaAux[k] = entrada[k];
+			 int i = bajo, j = mitad+1;
+			 for (int k = bajo; k <= alto; k++)
+			 {
+			 if (i > mitad) a[k] = aux[j++];
+			 else if (j > alto) entrada[k] = entradaAux[i++];
+			 else if (menos(entradaAux[j], entradaAux[i])) entrada[k] = entradaAux[j++];
+			 else a[k] = entradaAux[i++];
+			 }
+		
+	}
+	
+	
+	
+	
+	private static boolean menos(Comparable<Comparendo> v, Comparable w)
 	{ return v.compareTo(w) < 0; }
 
 
 
 
 
-	private static void intercambiar(Comparable[] entrada, int uno, int dos)
+	private static void intercambiar(Comparable<Comparendo>[] entrada, int uno, int dos)
 	{
-		Comparable swap = entrada[uno];
+		Comparable<Comparendo> swap = entrada[uno];
 		entrada[uno] = entrada[dos];
 		entrada[dos] = swap;
 	}
+	
+	
 }
