@@ -156,8 +156,8 @@ public class Modelo <Z extends Comparable>{
 
 
 	public String shellsort(Comparable datosEntrada[]){
-		
-		
+
+
 		start = System.currentTimeMillis();
 		int tamanoCortar = datosEntrada.length;
 		int h = 1;
@@ -171,51 +171,68 @@ public class Modelo <Z extends Comparable>{
 			}
 			h = h/3;
 		}
-		
+
 
 		String[] Respuesta = new String [20];
 		for(int i = 0; i < datosEntrada.length;i++){
-			
+
 			if(i<10){
 				Respuesta[i] = datosEntrada[i].toString() ;
 			}
 		}
 		finish = System.currentTimeMillis();
 		int z = 0;
-		
+
 		while(z<19){
 			return Respuesta[z];
 		};
 		return "el tiempo fue:  " + (finish - start)/1000 + "SEGUNDOS";
-			
+
 	}
 
-	
-	public static void merge(Comparable[] 1, ){
+
+	public void mergesort(Comparable<Comparendo>[] entrada) {
+
+		if(entrada.length == 1) {
+		//no se puede ordenar un arreglo de un elemento
+		}
+		else {
+			int mitad = entrada.length/2;
+			
+			Comparable[ ] iz = null;
+			Comparable[] der = null;
+			for (int i = 0; i < mitad; i++) {
+				iz[i] = entrada[i];
+				iz[i] = entrada[i];
+				
+				
+			}
 		
+				for (int z = mitad; z > mitad; z++) {
+					der[z] = entrada[z];
+					der[z] = entrada[z];
+				
+				}
+			
+				for (int c = 0 ; c < der.length;c++) {
+					if(der[c].compareTo(der[c++]) == -1) {
+						Comparable temporal = der[c];
+						der[c++] = der[c];
+						temporal = der[c++];
+					}
+				}
+		}
 	}
+
+public void particionar() {
 	
-	public String mergeSort(Comparable<Comparendo>[] entrada,Comparable<Comparendo>[] entradaAux,int bajo, int mitad, int alto){
+}
+public void quicksort() {
 	
-		
-		
-		 for (int k = bajo; k <= alto; k++)
-			 entradaAux[k] = entrada[k];
-			 int i = bajo, j = mitad+1;
-			 for (int k = bajo; k <= alto; k++)
-			 {
-			 if (i > mitad) a[k] = aux[j++];
-			 else if (j > alto) entrada[k] = entradaAux[i++];
-			 else if (menos(entradaAux[j], entradaAux[i])) entrada[k] = entradaAux[j++];
-			 else a[k] = entradaAux[i++];
-			 }
-		
-	}
-	
-	
-	
-	
-	private static boolean menos(Comparable<Comparendo> v, Comparable w)
+}
+
+
+	private static boolean menos(Comparable v, Comparable w)
 	{ return v.compareTo(w) < 0; }
 
 
@@ -228,6 +245,6 @@ public class Modelo <Z extends Comparable>{
 		entrada[uno] = entrada[dos];
 		entrada[dos] = swap;
 	}
-	
-	
+
+
 }
